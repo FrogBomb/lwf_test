@@ -1,0 +1,8 @@
+Usage:
+    lwf_test [ -i | -h | -t ]
+
+Flags:
+    -i : Information about the package
+    -h : Help on lwf_test
+    -t : Perform package tests
+    (no flags) : Print this message
