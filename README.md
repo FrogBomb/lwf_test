@@ -6,6 +6,8 @@ Created on Fri Dec  2 15:05:45 2016
 
 
 Basic Usage:
+
+
     disableVerboseTests() #Will not print individual outcomes this way
     
     @makeTester(catchErrors = ZeroDivisionError)
