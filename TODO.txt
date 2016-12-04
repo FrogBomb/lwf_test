@@ -1,0 +1,4 @@
+- automatically validate final state in tests
+     currently done only through visual inspection of print statements
+     (was used to work on properly displaying lwf_test information)
+- Populate TODO.txt
