@@ -125,12 +125,24 @@ class TestResultHelper(object, metaclass = TRHMeta):
             print(k, ":", v)
     """
     def __init__(self, func):
-        TestResultHelper[func.__name__] = self
+        funcName = self._initFuncName(func)
+        TestResultHelper[funcName] = self
         self.successes = []
         self.failures = []
         self.errors = []
-        self.funcName = func.__name__
+        self.funcName = funcName
         self._makeInstanceMethods()
+    
+    @staticmethod
+    def _initFuncName(func):
+        funcName = func.__name__
+        suff = ""
+        count = 0
+        while(funcName + suff in TestResultHelper.instances):
+            count += 1
+            suff = str(count)
+        funcName += suff
+        return funcName
         
     def _makeInstanceMethods(self):
         for name in self.__dir__():
@@ -301,10 +313,6 @@ def makeTester(comp = lambda a, b: a == b,\
         comp :: (output, output) -> boolean
             A comparison function for two function outputs
             defaults to normal comparison
-        
-        verbose :: boolean
-            If True, the Tester attribute will print information about
-            the individual test before returning
             
         catchErrors :: tuple(Exception) | Exception
             A tuple of Exceptions to acknowledge and catch.
@@ -327,7 +335,9 @@ def makeTester(comp = lambda a, b: a == b,\
         the TestResultsHelper class as a side-effect. 
     
     Usage:
-        @makeTester(verbose = False, catchErrors = ZeroDivisionError)
+        disableVerboseTests() #Will not print individual outcomes this way
+        
+        @makeTester(catchErrors = ZeroDivisionError)
         def myFunction(a, b):
             return a/b
         
@@ -350,7 +360,7 @@ def makeTester(comp = lambda a, b: a == b,\
         #Gets the TestResultsHelper instance for the named function. 
         #Can also use TestResultsHelper.getInstanceForFunc(myFunction)
         
-        testHelper = TestResultsHelper['myFunction']
+        testHelper = TestResultHelper['myFunction']
         
         #Will print "3", ignoring the unexpected error
         print("Total number of tests:", testHelper.getTotalTests())
