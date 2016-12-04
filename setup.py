@@ -43,6 +43,7 @@ setup(
     packages=['lwf_test', 'lwf_test.package_tests'],
     package_data={'lwf_test': '*.txt'},
 #    package_dir = {'lwf_test':'lwf_test'},
+    data_files = ['README.md'],
     entry_points={
         'console_scripts': [
             'lwf_test=lwf_test.__main__:main'
