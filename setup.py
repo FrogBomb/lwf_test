@@ -24,7 +24,7 @@ setup(
     description='A simple library for unit testing python code',
     long_description=long_description,
 
-#    url='https://github.com/frogbomb',
+    url='https://github.com/FrogBomb/lwf_test',
 
     author='Tom Blanchet',
     author_email='tlblanchet@gmail.com',
