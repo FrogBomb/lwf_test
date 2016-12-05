@@ -1,4 +1,4 @@
-lwf_test
+lwf_test -- Light Weight Function Test
 
 Created on Fri Dec  2 15:05:45 2016
 
