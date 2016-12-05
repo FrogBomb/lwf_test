@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-lwf_test -- Light Weight Function Test
+lwf_test -- LightWeight Function Test
 
-A simple library for unit testing python code
+A simple module/package for testing python code
 
 v 0.1a0
 
