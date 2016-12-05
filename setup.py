@@ -21,7 +21,7 @@ setup(
 
     version='0.1a0',
 
-    description='A simple library for unit testing python code',
+    description='A simple module/package for testing python code',
     long_description=long_description,
 
     url='https://github.com/FrogBomb/lwf_test',
