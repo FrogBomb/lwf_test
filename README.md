@@ -20,7 +20,7 @@ To test the installation, use:
     >>> lwf_test -t
 
 *(Only pay attention to the final message to see if the installation succeeded with the "All Tests Passed!" message.
-The "tests" that are printed are pre-defined tests for the Package that include those designed to fail)*
+The "tests" that are printed are pre-defined tests for the package that include those designed to fail)*
 
 
 ##Basic Usage:##
