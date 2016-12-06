@@ -25,10 +25,11 @@ The "tests" that are printed are pre-defined tests for the Package that include 
 
 ##Basic Usage:##
 
-The main tools in this module are the "makeTester" wrapper function, and 
-the "Tester" attribute bound through the wrapper.
+The main tools in this module are the "makeTester" wrapper function,
+the "Tester" method bound to the wrapper, and the "printFinalResults"
+helper function. 
 
-The simplist use case is this:
+The simplist use case is the following:
 ```python
     @makeTester()
     def myFunction(a, b, c):
@@ -36,9 +37,10 @@ The simplist use case is this:
         return ret
         
     myFunction.Tester(ret_I_expect, test_a, test_b, test_c)
+    
+    printFinalResults()
 ```
-Tester will either return "success", "failure", or "error" by default,
-naturally depending on the outcome of the test.
+Tester will either return "success", "failure", or "error" by default, naturally depending on the outcome of the test, as well as format and print the result and information of the individual test. Then, printFinalResults() will format and print a summary of all the tests conducted.
 
 Below are a few more ways to use lwf_test and some examples in 
 executable code:
@@ -87,6 +89,11 @@ for k, v in testHelper.getOutcomeTotals().items():
 
     from lwf_test import makeTester, printFinalResults,\
                 SUCCESS_KEY, FAILURE_KEY, ERROR_KEY, TestResultHelper
+
+#Since we disabled printing for each of the tests above, we can print out
+#all the tests that happened before using the "verbose" option in
+#printFinalResults.
+printFinalResults(verbose = True)
 
 enableVerboseTests() #You can re-enable verbose tests at any time
 
