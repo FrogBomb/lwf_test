@@ -46,6 +46,8 @@ Below are a few more ways to use lwf_test and some examples in
 executable code:
 
 ```python
+from lwf_test import *
+
 disableVerboseTests() #Will not print individual outcomes this way
 
 #All keword arguments for makeTester are optional.
