@@ -26,7 +26,7 @@ The "tests" that are printed are pre-defined tests for the package that include 
 ##Basic Usage:##
 
 The main tools in this module are the "makeTester" wrapper function,
-the "Tester" method bound to the wrapper, and the "printFinalResults"
+the "Tester" method that binds to the function, and the "printFinalResults"
 helper function. 
 
 The simplist use case is the following:
