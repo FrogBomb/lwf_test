@@ -31,14 +31,16 @@ helper function.
 
 The simplist use case is the following:
 ```python
-    @makeTester()
-    def myFunction(a, b, c):
-        ...
-        return ret
-        
-    myFunction.Tester(ret_I_expect, test_a, test_b, test_c)
-    
-    printFinalResults()
+from lwf_test import makeTester, printFinalResults
+
+@makeTester()
+def myFunction(a, b, c):
+    ...
+    return ret
+
+myFunction.Tester(ret_I_expect, test_a, test_b, test_c)
+
+printFinalResults()
 ```
 Tester will either return "success", "failure", or "error" by default, naturally depending on the outcome of the test, as well as format and print the result and information of the individual test. Then, printFinalResults() will format and print a summary of all the tests conducted.
 
