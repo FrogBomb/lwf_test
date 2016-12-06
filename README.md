@@ -6,7 +6,8 @@
 
 ##Description:
 
-This is 
+This is a simple module for doing quick an basic functional testing of python 3 code. Built with many helpers, including
+an inheritable Timer and print-outs for tests
     
 ##Installation:
 
@@ -24,21 +25,43 @@ The "tests" that are printed are pre-defined tests for the Package that include 
 
 ##Basic Usage:##
 
+The main tools in this module are the "makeTester" wrapper function, and 
+the "Tester" attribute bound through the wrapper.
+
+The simplist use case is this:
+```python
+    @makeTester()
+    def myFunction(a, b, c):
+        ...
+        return ret
+        
+    myFunction.Tester(ret_I_expect, test_a, test_b, test_c)
+```
+Tester will either return "success", "failure", or "error" by default,
+naturally depending on the outcome of the test.
+
+Below are a few more ways to use lwf_test and some examples in 
+executable code:
+
 ```python
 disableVerboseTests() #Will not print individual outcomes this way
 
+#All keword arguments for makeTester are optional.
+#   catchErrors modifies what are considered "acceptable" errors
+#   durring testing
 @makeTester(catchErrors = ZeroDivisionError)
 def myFunction(a, b):
     return a/b
 
-print(myFunction.Tester(5, 15, 3)) #Will return "success"
-print(myFunction.Tester(1, 4, 2))  #Will return "failure"
-print(myFunction.Tester(20, 4, 0)) #Will return "error"
+myFunction.Tester(5, 15, 3) #Will return "success"
+myFunction.Tester(1, 4, 2)  #Will return "failure"
+myFunction.Tester(20, 4, 0) #Will return "error"
+
 try:
     #This try block will raise an error that will not be caught
     #and the test will not be registered in TestResultsHelper
 
-    print(myFunction.Tester(3, "hi", "there"))
+    myFunction.Tester(3, "hi", "there")
 
 except TypeError as te: 
     print("fatal error:", te)
