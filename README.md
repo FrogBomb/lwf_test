@@ -6,7 +6,7 @@
 
 ##Description:
 
-This is a simple module for doing quick an basic functional testing of python 3.5 code. Built with many helpers, including
+This is a simple module for doing quick and basic functional testing of python 3.5 code. Built with many helpers, including
 an inheritable Timer and print-outs for tests
     
 ##Installation:
