@@ -42,7 +42,22 @@ myFunction.Tester(ret_I_expect, test_a, test_b, test_c)
 
 printFinalResults()
 ```
-Tester will either return "success", "failure", or "error" by default, naturally depending on the outcome of the test, as well as format and print the result and information of the individual test. Then, printFinalResults() will format and print a summary of all the tests conducted.
+Tester will either return "success", "failure", or "error" by default, naturally depending on the outcome of the test, as well as format and print the result and information of the individual test. Then, printFinalResults() will format and print a summary of all the tests conducted. The printed output for the above will look something like this:
+```
+Result for myFunction test # 1:
+::::::SUCCESS::::::
+    Details:
+    Args: (<test_a>, <test_b>, <test_c>)
+    Kwargs: {}
+    Expected output: <ret_I_expect>
+    True output: <ret_I_expect>
+
+======= Final Test Summary =======
+Total Tests: 1
+Successes: 1
+Failures: 0
+Errors: 0
+```
 
 Below are a few more ways to use lwf_test and some examples in 
 executable code:
