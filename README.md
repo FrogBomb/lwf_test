@@ -1,15 +1,15 @@
-#lwf_test -- LightWeight Function Test
+# lwf_test -- LightWeight Function Test
 
 *Created on Fri Dec  2 15:05:45 2016*
 
 *@author: Tom Blanchet*
 
-##Description:
+## Description:
 
 This is a simple module for doing quick and basic functional testing of python 3.5 code. Built with many helpers, including
 an inheritable Timer and print-outs for tests
     
-##Installation:
+## Installation:
 
 To install lwf_test, simply go to the root of this repository, and execute the following in your command line:
 
@@ -23,7 +23,7 @@ To test the installation, use:
 The "tests" that are printed are pre-defined tests for the package that include those designed to fail)*
 
 
-##Basic Usage:##
+## Basic Usage: ##
 
 The main tools in this module are the "makeTester" wrapper function,
 the "Tester" method that binds to the function, and the "printFinalResults"
